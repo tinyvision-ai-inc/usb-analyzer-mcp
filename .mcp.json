@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "usb-analyzer": {
+      "command": "uv",
+      "args": ["run", "usb-analyzer-mcp"]
+    }
+  }
+}

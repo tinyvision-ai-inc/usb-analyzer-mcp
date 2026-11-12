@@ -1,0 +1,35 @@
+[project]
+name = "usb-analyzer-mcp"
+version = "0.1.0"
+description = "MCP server that lets AI agents drive USB protocol analyzers via the USB Protocol Suite automation API (unofficial; not affiliated with Teledyne LeCroy)"
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+keywords = ["mcp", "usb", "protocol-analyzer", "test-automation"]
+requires-python = ">=3.12"
+dependencies = [
+    "mcp[cli]>=2.3.0,<3",
+    "pywin32>=312",
+]
+
+[project.urls]
+Repository = "https://github.com/tinyvision-ai-inc/usb-analyzer-mcp"
+
+[project.scripts]
+usb-analyzer-mcp = "usb_analyzer_mcp.server:main"
+
+[build-system]
+requires = ["uv_build>=0.13.7,<0.14.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.2.0",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = [
+    "hardware: needs a connected analyzer unit",
+    "suite: needs USB Protocol Suite installed (COM server), no hardware required",
+]

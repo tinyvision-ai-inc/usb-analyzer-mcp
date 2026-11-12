@@ -1,0 +1,13 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+dist/
+build/
+*.egg-info/
+
+# analyzer artifacts (captures can be large and may contain customer traffic)
+*.usb
+*.usbraw
+*.usb.tmp/
+mcp_output/
